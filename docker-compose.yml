@@ -11,9 +11,13 @@ services:
        MYSQL_DATABASE: db_wordpress
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: ${WORDPRESS_MYSQL_PASSWORD}
-
+       
    wordpress:
-     image: wordpress:latest
+     build:
+       context: ./dockerwordpress
+       dockerfile: ${WORDPRESS_DOCKER_FILENAME}
+       args:
+         DOCKERFILE_ARGS_WORDPRESS_VERSION: ${WORDPRESS_DOCKER_IMAGE_VERSION}
      volumes:
        - ./html:/var/www/html
      depends_on: 
