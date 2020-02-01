@@ -1,0 +1,27 @@
+
+# Excludes all Files by Docker
+#/html/*
+/html/*
+
+!/html/wp-content
+/html/wp-content/*
+
+#Exlude all other plugins
+!/html/wp-content/plugins/
+/html/wp-content/plugins/*
+
+#Exclude all other themes
+!/html/wp-content/themes/
+/html/wp-content/themes/*
+
+
+# includes files or folders for development 
+!docker-compose.yml
+!.env
+!.gitignore
+
+# include the plugin to develope
+!/html/wp-content/plugins/landingpage_plugin
+
+# include the theme to develope
+#!/html/wp-content/themes/twentytwenty
